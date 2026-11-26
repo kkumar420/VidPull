@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "vidpull"
+version = "0.1.0"
+description = "An interactive media downloader"
+requires-python = ">=3.11"
+dependencies = [
+    "rich>=15.0.0",
+    "typer>=0.29.2",
+    "yt-dlp[default]>=2026.11.23",
+]
+
+[project.scripts]
+vidpull = "vidpull.cli:app"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["vidpull*"]
